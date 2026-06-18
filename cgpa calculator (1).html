@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SASTRA CGPA Calculator</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; background-color: #f0f8ff; }
+    h1 { color: #003366; } /* SASTRA Blue */
+    input { padding: 8px; margin: 5px; width: 200px; }
+    button { padding: 10px 20px; background-color: #003366; color: white; border: none; cursor: pointer; }
+    #result { font-size: 24px; margin-top: 20px; color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>SASTRA BCA CGPA Calculator</h1>
+  <p>Sem 1 Grade Point: <input type="number" id="sem1" placeholder="Ex: 9.2"></p>
+  <p>Sem 2 Grade Point: <input type="number" id="sem2" placeholder="Ex: 8.5"></p>
+  <p>Sem 3 Grade Point: <input type="number" id="sem3" placeholder="Ex: 9.0"></p>
+  
+  <button onclick="calculateCGPA()">Calculate My CGPA</button>
+  
+  <div id="result"></div>
+
+  <script>
+    function calculateCGPA() {
+      // 1. Input edukuradhu - C la scanf maari
+      var s1 = document.getElementById("sem1").value;
+      var s2 = document.getElementById("sem2").value;
+      var s3 = document.getElementById("sem3").value;
+      
+      // 2. Number ah maathuradhu - C la int/float maari
+      s1 = Number(s1);
+      s2 = Number(s2);
+      s3 = Number(s3);
+      
+      // 3. Calculation - C la irukura adhe + / dhan
+      var total = s1 + s2 + s3;
+      var cgpa = total / 3;
+      
+      // 4. Result kaaturadhu - C la printf maari
+      document.getElementById("result").innerHTML = "Your CGPA is: " + cgpa.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
